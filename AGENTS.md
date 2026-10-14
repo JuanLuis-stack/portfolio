@@ -61,3 +61,10 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
 
 10. **Commit 10: `feat(sections): apply scroll reveal and shimmer across WhatICanDo, HowIBuild, and AboutMe`** [COMPLETED]
     - Add title shimmer and scroll-triggered entrance to cards in `WhatICanDo.tsx`, `HowIBuild.tsx`, and `AboutMe.tsx`.
+
+11. **Commit 11: `feat(header): add text shimmer on name and staggered reveal on hero elements`** [COMPLETED]
+    - Add `.animate-hero-item` keyframes in `src/index.css`.
+    - Apply text shimmer to "Juan Luis." name and staggered animation delays across all hero elements in `src/components/Header.tsx`.
+
+12. **Commit 12: `feat(projects): enhance staggered reveal animation on details toggle`**
+    - Apply `.animate-hero-item` with staggered delays on the 3 architecture boxes in `src/components/MyProjects.tsx` for a prominent entrance when toggled.

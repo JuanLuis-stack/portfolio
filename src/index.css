@@ -133,3 +133,20 @@ code {
   transform: translateY(0);
 }
 
+/* Dynamic Staggered Reveal Animation */
+@keyframes hero-stagger {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-item {
+  opacity: 0;
+  animation: hero-stagger 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

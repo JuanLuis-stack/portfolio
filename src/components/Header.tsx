@@ -15,28 +15,45 @@ function Header() {
       />
 
       <div className="relative z-10 ml-auto mt-28 w-full min-w-0 max-w-2xl text-left md:mr-[4vw] md:mt-12 md:text-right">
-        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/65 md:ml-auto">
+        <p
+          style={{ animationDelay: "150ms" }}
+          className="animate-hero-item mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/65 md:ml-auto"
+        >
           <span
             aria-hidden="true"
             className="h-1.5 w-1.5 rounded-full bg-green-400"
           />
           Available for hire
         </p>
-        <h1 className="mb-2 text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+        <h1
+          style={{ animationDelay: "300ms" }}
+          className="animate-hero-item mb-2 text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+        >
           Hi, I&apos;m{" "}
-          <span className="font-serif italic text-orange-400">Juan Luis.</span>
+          <span className="text-shimmer font-serif italic text-orange-400">
+            Juan Luis.
+          </span>
         </h1>
-        <p className="mb-5 text-xs font-medium uppercase tracking-[0.22em] text-white/55 sm:text-sm">
+        <p
+          style={{ animationDelay: "450ms" }}
+          className="animate-hero-item mb-5 text-xs font-medium uppercase tracking-[0.22em] text-white/55 sm:text-sm"
+        >
           Full Stack Software Developer
         </p>
-        <p className="ml-auto max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
+        <p
+          style={{ animationDelay: "600ms" }}
+          className="animate-hero-item ml-auto max-w-xl text-sm leading-relaxed text-white/75 sm:text-base"
+        >
           I&apos;m a self-driven developer passionate about solving problems,
           writing clean code, and continuously learning. I focus on understanding
           the why behind every solution and turning knowledge into real-world
           applications.
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-3 md:justify-end">
+        <div
+          style={{ animationDelay: "750ms" }}
+          className="animate-hero-item mt-7 flex flex-wrap gap-3 md:justify-end"
+        >
           <a
             href="https://www.linkedin.com/in/juan-luis-arias-rojas-b21693339/"
             target="_blank"
