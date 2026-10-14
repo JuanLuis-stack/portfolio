@@ -1,3 +1,5 @@
+import { useInView } from "../hooks/useInView";
+
 const capabilities = [
   {
     title: "Full-Stack Web Development",
@@ -82,6 +84,8 @@ const capabilities = [
 ];
 
 function WhatICanDo() {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 });
+
   return (
     <section
       id="what-i-can-do"
@@ -95,7 +99,7 @@ function WhatICanDo() {
           </p>
           <h2
             id="what-i-can-do-title"
-            className="mb-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="text-shimmer mb-4 text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             What I Do.
           </h2>
@@ -105,12 +109,17 @@ function WhatICanDo() {
           </p>
         </div>
 
-        {/* Feature Boxes */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {capabilities.map((item) => (
+        {/* Feature Boxes with Staggered Scroll Reveal */}
+        <div ref={ref} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {capabilities.map((item, index) => (
             <div
               key={item.title}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#14100c]/85 p-7 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#1a140f]"
+              style={{
+                transitionDelay: `${index * 120}ms`,
+              }}
+              className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#14100c]/85 p-7 shadow-xl backdrop-blur-md transition-all duration-700 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#1a140f] ${
+                inView ? "reveal-active" : "reveal-init"
+              }`}
             >
               <div>
                 {/* Icon Circle */}

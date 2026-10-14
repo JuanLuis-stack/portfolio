@@ -28,7 +28,7 @@ function App() {
           </p>
           <h2
             id="lets-talk-title"
-            className="mb-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="text-shimmer mb-5 text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             Let’s Talk.
           </h2>

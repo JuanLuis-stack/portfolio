@@ -59,5 +59,5 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
 9. **Commit 9: `feat(tech-stack): implement staggered scroll reveal for tech categories and items`** [COMPLETED]
    - Add title shimmer and staggered entrance animations for tech categories in `TechStack.tsx`.
 
-10. **Commit 10: `feat(sections): apply scroll reveal and shimmer across WhatICanDo, HowIBuild, and AboutMe`**
+10. **Commit 10: `feat(sections): apply scroll reveal and shimmer across WhatICanDo, HowIBuild, and AboutMe`** [COMPLETED]
     - Add title shimmer and scroll-triggered entrance to cards in `WhatICanDo.tsx`, `HowIBuild.tsx`, and `AboutMe.tsx`.

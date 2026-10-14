@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useInView } from "../hooks/useInView";
 
 function AboutMe() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 });
 
   return (
     <section
@@ -15,7 +17,12 @@ function AboutMe() {
         </p>
 
         {/* Featured About Card matching About Me style reference */}
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#14100c]/90 p-6 shadow-2xl backdrop-blur-md sm:p-10 lg:p-12">
+        <div
+          ref={ref}
+          className={`relative overflow-hidden rounded-3xl border border-white/10 bg-[#14100c]/90 p-6 shadow-2xl backdrop-blur-md transition-all duration-700 sm:p-10 lg:p-12 ${
+            inView ? "reveal-active" : "reveal-init"
+          }`}
+        >
           {/* Subtle warm glow behind card */}
           <div
             aria-hidden="true"
@@ -40,7 +47,7 @@ function AboutMe() {
               <div className="mb-3 flex items-center justify-center gap-3 md:justify-start">
                 <h2
                   id="about-me-title"
-                  className="text-4xl font-bold tracking-tight text-white sm:text-5xl"
+                  className="text-shimmer text-4xl font-bold tracking-tight sm:text-5xl"
                 >
                   About Me.
                 </h2>

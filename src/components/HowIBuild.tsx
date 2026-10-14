@@ -1,3 +1,5 @@
+import { useInView } from "../hooks/useInView";
+
 const buildSteps = [
   {
     step: 1,
@@ -26,6 +28,8 @@ const buildSteps = [
 ];
 
 function HowIBuild() {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 });
+
   return (
     <section
       id="how-i-build"
@@ -39,7 +43,7 @@ function HowIBuild() {
           </p>
           <h2
             id="how-i-build-title"
-            className="mb-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="text-shimmer mb-4 text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             How I Build Software.
           </h2>
@@ -49,20 +53,27 @@ function HowIBuild() {
           </p>
         </div>
 
-        {/* Timeline structure with prominent left line */}
-        <div className="relative pl-2 sm:pl-4">
+        {/* Timeline structure with prominent left line and staggered reveal */}
+        <div ref={ref} className="relative pl-2 sm:pl-4">
           {/* Vertical left connecting line */}
           <div
             aria-hidden="true"
-            className="absolute bottom-6 left-[23px] top-6 w-[2px] bg-gradient-to-b from-amber-400 via-orange-500 to-amber-500/40 sm:left-[27px]"
+            className={`absolute bottom-6 left-[23px] top-6 w-[2px] bg-gradient-to-b from-amber-400 via-orange-500 to-amber-500/40 transition-opacity duration-1000 sm:left-[27px] ${
+              inView ? "opacity-100" : "opacity-0"
+            }`}
           />
 
           {/* Timeline Nodes */}
           <div className="space-y-10 sm:space-y-12">
-            {buildSteps.map((item) => (
+            {buildSteps.map((item, index) => (
               <div
                 key={item.step}
-                className="group relative flex items-start gap-6 sm:gap-8"
+                style={{
+                  transitionDelay: `${index * 140}ms`,
+                }}
+                className={`group relative flex items-start gap-6 transition-all duration-700 sm:gap-8 ${
+                  inView ? "reveal-active" : "reveal-init"
+                }`}
               >
                 {/* Numbered Circular Node */}
                 <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-sm font-extrabold text-[#0b0908] shadow-lg shadow-orange-500/25 ring-4 ring-[#0b0908] sm:h-10 sm:w-10">
