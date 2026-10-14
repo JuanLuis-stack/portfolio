@@ -25,7 +25,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Display technology SVGs, level indicators (both icons and text: High, Medium, Low–Medium, Low, Pending).
    - Embed into `App.tsx`.
 
-4. **Commit 4: `feat(projects): create MyProjects component with featured card and expandable breakdown`**
+4. **Commit 4: `feat(projects): create MyProjects component with featured card and expandable breakdown`** [COMPLETED]
    - Create `src/components/MyProjects.tsx`.
    - Feature "Posts Management" social media application screenshot (`project-threads.png`).
    - Present tech badges (React, Tailwind CSS, TypeScript, Node.js, Express.js, PostgreSQL, Git, GitHub).

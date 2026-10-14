@@ -2,13 +2,9 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import TechStack from "./components/TechStack";
+import MyProjects from "./components/MyProjects";
 
 const sections = [
-  {
-    id: "my-projects",
-    title: "My Projects",
-    description: "Selected projects and the problems they solve.",
-  },
   {
     id: "what-i-can-do",
     title: "What I Can Do",
@@ -36,6 +32,7 @@ function App() {
       <Header />
       <AboutMe />
       <TechStack />
+      <MyProjects />
       {sections.map((section, index) => (
         <section
           key={section.id}
