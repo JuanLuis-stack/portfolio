@@ -3,6 +3,8 @@
 ## Project Overview
 This repository contains the developer portfolio of **Juan Luis Arias** (Full Stack Software Developer), built with React 19, TypeScript, and Tailwind CSS v4.
 
+- **Active Branch:** `feature/portfolio-components-redesign` (renamed from `feature/portfolio-header`)
+
 ## Commit Plan & Incremental Steps
 
 1. **Commit 1: `feat(navbar): extract navbar into fixed top component`**
