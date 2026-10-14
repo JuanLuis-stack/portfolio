@@ -19,7 +19,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Show initial paragraph with an interactive "See more..." toggle to reveal full bio.
    - Embed into `App.tsx`.
 
-3. **Commit 3: `feat(tech-stack): create categorized TechStack component with icons and proficiency levels`**
+3. **Commit 3: `feat(tech-stack): create categorized TechStack component with icons and proficiency levels`** [COMPLETED]
    - Create `src/components/TechStack.tsx`.
    - Group technologies into distinct stylized color-coded cards (Frontend, Backend, Databases, Tools, and Pending/In Progress).
    - Display technology SVGs, level indicators (both icons and text: High, Medium, Low–Medium, Low, Pending).

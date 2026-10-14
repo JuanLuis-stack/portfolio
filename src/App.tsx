@@ -1,13 +1,9 @@
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
+import TechStack from "./components/TechStack";
 
 const sections = [
-  {
-    id: "tech-stack",
-    title: "Tech Stack",
-    description: "The tools and technologies I use to build web applications.",
-  },
   {
     id: "my-projects",
     title: "My Projects",
@@ -39,6 +35,7 @@ function App() {
       <Navbar />
       <Header />
       <AboutMe />
+      <TechStack />
       {sections.map((section, index) => (
         <section
           key={section.id}
