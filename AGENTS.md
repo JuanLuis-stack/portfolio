@@ -52,7 +52,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Add `.text-shimmer` gradient sweep keyframes and `.reveal-init` / `.reveal-active` utility classes in `src/index.css`.
    - Create `src/hooks/useInView.ts` for clean scroll-triggered reveals using `IntersectionObserver`.
 
-8. **Commit 8: `feat(projects): restructure details into bottom 3-column grid with staggered reveal`**
+8. **Commit 8: `feat(projects): restructure details into bottom 3-column grid with staggered reveal`** [COMPLETED]
    - Redesign details expansion in `MyProjects.tsx` into a 3-box responsive grid beneath the preview image.
    - Lock image container aspect ratio to prevent vertical expansion and add staggered reveal.
 

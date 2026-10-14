@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInView } from "../hooks/useInView";
 
 const projectTechs = [
   { name: "React", color: "text-cyan-400 border-cyan-500/20 bg-cyan-500/10" },
@@ -11,8 +12,69 @@ const projectTechs = [
   { name: "GitHub", color: "text-white border-white/20 bg-white/10" },
 ];
 
+const technicalBreakdown = [
+  {
+    category: "Frontend",
+    tag: "Client Layer",
+    accent: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
+    icon: (
+      <svg className="h-5 w-5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
+        <ellipse cx="12" cy="12" rx="3.5" ry="3.5" />
+        <path
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          d="M12 4.5c4.7 0 8.5 3.36 8.5 7.5s-3.8 7.5-8.5 7.5-8.5-3.36-8.5-7.5 3.8-7.5 8.5-7.5z"
+          transform="rotate(30 12 12)"
+        />
+        <path
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          d="M12 4.5c4.7 0 8.5 3.36 8.5 7.5s-3.8 7.5-8.5 7.5-8.5-3.36-8.5-7.5 3.8-7.5 8.5-7.5z"
+          transform="rotate(90 12 12)"
+        />
+      </svg>
+    ),
+    description:
+      "Built a component-based user interface with React and TypeScript, using reusable components, React hooks, Context API for shared state, and responsive styling with Tailwind CSS.",
+  },
+  {
+    category: "Backend",
+    tag: "Server & API",
+    accent: "text-emerald-400 border-emerald-500/30 bg-emerald-950/20",
+    icon: (
+      <svg className="h-5 w-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+    description:
+      "Developed a backend with Node.js and Express.js to handle API requests and application logic, connecting the frontend with the database.",
+  },
+  {
+    category: "Database",
+    tag: "Data Layer",
+    accent: "text-sky-400 border-sky-500/30 bg-sky-950/20",
+    icon: (
+      <svg className="h-5 w-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="8" ry="3" strokeWidth="2" />
+        <path strokeWidth="2" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
+        <path strokeWidth="2" d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+      </svg>
+    ),
+    description:
+      "Used PostgreSQL to store and manage application data, implementing relational structures and SQL queries to support user profiles, posts, and follow relationships.",
+  },
+];
+
 function MyProjects() {
   const [showDetails, setShowDetails] = useState(false);
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <section
@@ -27,7 +89,7 @@ function MyProjects() {
           </p>
           <h2
             id="my-projects-title"
-            className="mb-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="text-shimmer mb-4 text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             Featured Project.
           </h2>
@@ -38,18 +100,24 @@ function MyProjects() {
         </div>
 
         {/* Featured Showcase Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-orange-500/30 bg-gradient-to-b from-[#18130f] to-[#0e0b09] p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:p-10">
+        <div
+          ref={ref}
+          className={`relative overflow-hidden rounded-3xl border border-orange-500/30 bg-gradient-to-b from-[#18130f] to-[#0e0b09] p-6 shadow-2xl backdrop-blur-xl transition-all duration-700 sm:p-8 lg:p-10 ${
+            inView ? "reveal-active" : "reveal-init"
+          }`}
+        >
           {/* Ambient Glow */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-orange-600/15 blur-3xl"
           />
 
-          <div className="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+          {/* Top Row: Preview & Core Summary (Locked aspect ratio, will NOT stretch) */}
+          <div className="relative z-10 grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
             {/* Project Image Frame (Left Column) */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/15 bg-black/60 shadow-xl lg:col-span-7">
+            <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/15 bg-black/60 shadow-xl lg:col-span-7">
               {/* Browser / App Header bar */}
-              <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5">
+              <div className="flex shrink-0 items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
@@ -61,12 +129,12 @@ function MyProjects() {
                 <span className="text-[10px] text-orange-400">Live Architecture</span>
               </div>
 
-              {/* Screenshot Image */}
-              <div className="overflow-hidden bg-[#0a0a0c]">
+              {/* Screenshot Image with locked proportion */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0a0a0c]">
                 <img
                   src="/project-threads.png"
                   alt="Posts Management - Full-stack social media application"
-                  className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
             </div>
@@ -105,48 +173,10 @@ function MyProjects() {
                     ))}
                   </div>
                 </div>
-
-                {/* Expandable Technical Deep-Dive */}
-                {showDetails && (
-                  <div className="space-y-4 rounded-2xl border border-white/10 bg-black/40 p-4 text-xs sm:text-sm text-white/80 animate-in fade-in duration-300">
-                    <div>
-                      <h4 className="mb-1 font-semibold text-orange-400">
-                        Frontend:
-                      </h4>
-                      <p className="leading-relaxed text-white/70">
-                        Built a component-based user interface with React and
-                        TypeScript, using reusable components, React hooks, Context API
-                        for shared state, and responsive styling with Tailwind CSS.
-                      </p>
-                    </div>
-
-                    <div className="border-t border-white/10 pt-3">
-                      <h4 className="mb-1 font-semibold text-emerald-400">
-                        Backend:
-                      </h4>
-                      <p className="leading-relaxed text-white/70">
-                        Developed a backend with Node.js and Express.js to handle API
-                        requests and application logic, connecting the frontend with the
-                        database.
-                      </p>
-                    </div>
-
-                    <div className="border-t border-white/10 pt-3">
-                      <h4 className="mb-1 font-semibold text-sky-400">
-                        Database:
-                      </h4>
-                      <p className="leading-relaxed text-white/70">
-                        Used PostgreSQL to store and manage application data,
-                        implementing relational structures and SQL queries to support
-                        user profiles, posts, and follow relationships.
-                      </p>
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <button
                   type="button"
                   onClick={() => setShowDetails(!showDetails)}
@@ -184,6 +214,51 @@ function MyProjects() {
               </div>
             </div>
           </div>
+
+          {/* Bottom Section: 3-Box Architecture Breakdown (Below image, 3 columns on non-mobile with Staggered Reveal) */}
+          {showDetails && (
+            <div className="relative z-10 mt-8 border-t border-white/10 pt-8 animate-in fade-in duration-300">
+              <div className="mb-4 flex items-center justify-between">
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-orange-400">
+                  Full-Stack Architecture Breakdown
+                </h4>
+                <span className="text-xs text-white/50">3-Tier Implementation</span>
+              </div>
+
+              {/* 3 Boxes: 1 col on mobile, 3 cols on tablet/desktop with Staggered Reveal */}
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+                {technicalBreakdown.map((item, index) => (
+                  <div
+                    key={item.category}
+                    style={{
+                      animationDelay: `${index * 140}ms`,
+                    }}
+                    className={`flex flex-col justify-between rounded-2xl border p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both ${item.accent}`}
+                  >
+                    <div>
+                      <div className="mb-4 flex items-center justify-between">
+                        <div className="flex items-center gap-2.5">
+                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/40 ring-1 ring-white/10">
+                            {item.icon}
+                          </div>
+                          <h5 className="text-base font-bold text-white">
+                            {item.category}
+                          </h5>
+                        </div>
+                        <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-white/70">
+                          {item.tag}
+                        </span>
+                      </div>
+
+                      <p className="text-xs leading-relaxed text-white/80 sm:text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
