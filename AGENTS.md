@@ -32,7 +32,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Display basic project overview with "See more details" toggle for Frontend, Backend, and Database implementation details.
    - Embed into `App.tsx`.
 
-5. **Commit 5: `feat(what-i-can-do): create WhatICanDo component with stylized feature boxes`**
+5. **Commit 5: `feat(what-i-can-do): create WhatICanDo component with stylized feature boxes`** [COMPLETED]
    - Create `src/components/WhatICanDo.tsx`.
    - Display core developer competencies in dark glass cards with warm accent icons.
    - Cover full-stack development, responsive UI, REST APIs & databases, and problem-solving.

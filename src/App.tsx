@@ -3,14 +3,9 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import TechStack from "./components/TechStack";
 import MyProjects from "./components/MyProjects";
+import WhatICanDo from "./components/WhatICanDo";
 
 const sections = [
-  {
-    id: "what-i-can-do",
-    title: "What I Can Do",
-    description:
-      "Ways I can contribute, from frontend experiences to backend services.",
-  },
   {
     id: "how-i-build",
     title: "How I Build",
@@ -33,6 +28,7 @@ function App() {
       <AboutMe />
       <TechStack />
       <MyProjects />
+      <WhatICanDo />
       {sections.map((section, index) => (
         <section
           key={section.id}
