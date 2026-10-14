@@ -231,9 +231,9 @@ function MyProjects() {
                   <div
                     key={item.category}
                     style={{
-                      animationDelay: `${index * 140}ms`,
+                      animationDelay: `${index * 160}ms`,
                     }}
-                    className={`flex flex-col justify-between rounded-2xl border p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both ${item.accent}`}
+                    className={`animate-hero-item flex flex-col justify-between rounded-2xl border p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 ${item.accent}`}
                   >
                     <div>
                       <div className="mb-4 flex items-center justify-between">

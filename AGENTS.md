@@ -66,5 +66,5 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
     - Add `.animate-hero-item` keyframes in `src/index.css`.
     - Apply text shimmer to "Juan Luis." name and staggered animation delays across all hero elements in `src/components/Header.tsx`.
 
-12. **Commit 12: `feat(projects): enhance staggered reveal animation on details toggle`**
+12. **Commit 12: `feat(projects): enhance staggered reveal animation on details toggle`** [COMPLETED]
     - Apply `.animate-hero-item` with staggered delays on the 3 architecture boxes in `src/components/MyProjects.tsx` for a prominent entrance when toggled.
