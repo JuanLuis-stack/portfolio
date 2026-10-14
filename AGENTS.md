@@ -45,3 +45,19 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Implement vertical left-line timeline with circular numbered nodes (1, 2, 3, 4).
    - Cover Plan First, Build Incrementally, Test and Refine, and Keep Learning.
    - Finalize integration in `App.tsx`.
+
+## Phase 2: Animations & Layout Refactoring
+
+7. **Commit 7: `feat(animations): add text shimmer keyframes and useInView scroll reveal hook`** [COMPLETED]
+   - Add `.text-shimmer` gradient sweep keyframes and `.reveal-init` / `.reveal-active` utility classes in `src/index.css`.
+   - Create `src/hooks/useInView.ts` for clean scroll-triggered reveals using `IntersectionObserver`.
+
+8. **Commit 8: `feat(projects): restructure details into bottom 3-column grid with staggered reveal`**
+   - Redesign details expansion in `MyProjects.tsx` into a 3-box responsive grid beneath the preview image.
+   - Lock image container aspect ratio to prevent vertical expansion and add staggered reveal.
+
+9. **Commit 9: `feat(tech-stack): implement staggered scroll reveal for tech categories and items`**
+   - Add title shimmer and staggered entrance animations for tech categories in `TechStack.tsx`.
+
+10. **Commit 10: `feat(sections): apply scroll reveal and shimmer across WhatICanDo, HowIBuild, and AboutMe`**
+    - Add title shimmer and scroll-triggered entrance to cards in `WhatICanDo.tsx`, `HowIBuild.tsx`, and `AboutMe.tsx`.
