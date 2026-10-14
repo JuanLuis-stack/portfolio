@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { useInView } from "../hooks/useInView";
 
 type Proficiency = "High" | "Medium" | "Low–Medium" | "Low" | "Pending";
 
@@ -411,6 +412,8 @@ const techCategories: TechCategory[] = [
 ];
 
 function TechStack() {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.1 });
+
   return (
     <section
       id="tech-stack"
@@ -424,7 +427,7 @@ function TechStack() {
           </p>
           <h2
             id="tech-stack-title"
-            className="mb-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            className="text-shimmer mb-4 text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             Technologies & Tools.
           </h2>
@@ -434,12 +437,17 @@ function TechStack() {
           </p>
         </div>
 
-        {/* Grid of categorized boxes with slightly different colors */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {techCategories.map((category) => (
+        {/* Grid of categorized boxes with staggered scroll reveal */}
+        <div ref={ref} className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {techCategories.map((category, index) => (
             <div
               key={category.title}
-              className={`flex flex-col justify-between rounded-3xl border p-6 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 ${category.cardStyle}`}
+              style={{
+                transitionDelay: `${index * 130}ms`,
+              }}
+              className={`flex flex-col justify-between rounded-3xl border p-6 shadow-xl backdrop-blur-md transition-all duration-700 hover:-translate-y-1 ${
+                category.cardStyle
+              } ${inView ? "reveal-active" : "reveal-init"}`}
             >
               <div>
                 {/* Category Header */}

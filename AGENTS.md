@@ -56,7 +56,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Redesign details expansion in `MyProjects.tsx` into a 3-box responsive grid beneath the preview image.
    - Lock image container aspect ratio to prevent vertical expansion and add staggered reveal.
 
-9. **Commit 9: `feat(tech-stack): implement staggered scroll reveal for tech categories and items`**
+9. **Commit 9: `feat(tech-stack): implement staggered scroll reveal for tech categories and items`** [COMPLETED]
    - Add title shimmer and staggered entrance animations for tech categories in `TechStack.tsx`.
 
 10. **Commit 10: `feat(sections): apply scroll reveal and shimmer across WhatICanDo, HowIBuild, and AboutMe`**
