@@ -38,7 +38,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Cover full-stack development, responsive UI, REST APIs & databases, and problem-solving.
    - Embed into `App.tsx`.
 
-6. **Commit 6: `feat(how-i-build): create HowIBuild component with vertical timeline style`**
+6. **Commit 6: `feat(how-i-build): create HowIBuild component with vertical timeline style`** [COMPLETED]
    - Create `src/components/HowIBuild.tsx`.
    - Implement vertical left-line timeline with circular numbered nodes (1, 2, 3, 4).
    - Cover Plan First, Build Incrementally, Test and Refine, and Keep Learning.
