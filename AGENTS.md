@@ -12,7 +12,7 @@ This repository contains the developer portfolio of **Juan Luis Arias** (Full St
    - Clean up `Header.tsx` so it focuses exclusively on hero section content.
    - Integrate `Navbar` and `Header` in `App.tsx`.
 
-2. **Commit 2: `feat(about-me): create AboutMe component with verified badge and expandable bio`**
+2. **Commit 2: `feat(about-me): create AboutMe component with verified badge and expandable bio`** [COMPLETED]
    - Create `src/components/AboutMe.tsx`.
    - Feature avatar with warm orange circular glow using `Myselftportfolioimg.jpeg`.
    - Include "About Me." title with golden verified checkmark badge.

@@ -1,13 +1,8 @@
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import AboutMe from "./components/AboutMe";
 
 const sections = [
-  {
-    id: "about-me",
-    title: "About Me",
-    description:
-      "A little more about my background, goals, and approach to software development.",
-  },
   {
     id: "tech-stack",
     title: "Tech Stack",
@@ -43,6 +38,7 @@ function App() {
     <main className="overflow-hidden bg-[#0b0908] text-white">
       <Navbar />
       <Header />
+      <AboutMe />
       {sections.map((section, index) => (
         <section
           key={section.id}
