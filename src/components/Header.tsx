@@ -30,7 +30,7 @@ function Header() {
           className="animate-hero-item mb-2 text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
         >
           Hi, I&apos;m{" "}
-          <span className="text-shimmer font-serif italic text-orange-400">
+          <span className="text-shimmer font-serif italic text-orange-400 px-1">
             Juan Luis.
           </span>
         </h1>
@@ -45,9 +45,9 @@ function Header() {
           className="animate-hero-item ml-auto max-w-xl text-sm leading-relaxed text-white/75 sm:text-base"
         >
           I&apos;m a self-driven developer passionate about solving problems,
-          writing clean code, and continuously learning. I focus on understanding
-          the why behind every solution and turning knowledge into real-world
-          applications.
+          writing clean code, and continuously learning. I focus on
+          understanding the why behind every solution and turning knowledge into
+          real-world applications.
         </p>
 
         <div

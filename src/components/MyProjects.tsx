@@ -3,12 +3,30 @@ import { useInView } from "../hooks/useInView";
 
 const projectTechs = [
   { name: "React", color: "text-cyan-400 border-cyan-500/20 bg-cyan-500/10" },
-  { name: "TypeScript", color: "text-blue-400 border-blue-500/20 bg-blue-500/10" },
-  { name: "Tailwind CSS", color: "text-sky-400 border-sky-500/20 bg-sky-500/10" },
-  { name: "Node.js", color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10" },
-  { name: "Express.js", color: "text-zinc-300 border-zinc-500/20 bg-zinc-500/10" },
-  { name: "PostgreSQL", color: "text-blue-300 border-blue-500/20 bg-blue-500/10" },
-  { name: "Git", color: "text-orange-400 border-orange-500/20 bg-orange-500/10" },
+  {
+    name: "TypeScript",
+    color: "text-blue-400 border-blue-500/20 bg-blue-500/10",
+  },
+  {
+    name: "Tailwind CSS",
+    color: "text-sky-400 border-sky-500/20 bg-sky-500/10",
+  },
+  {
+    name: "Node.js",
+    color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
+  },
+  {
+    name: "Express.js",
+    color: "text-zinc-300 border-zinc-500/20 bg-zinc-500/10",
+  },
+  {
+    name: "PostgreSQL",
+    color: "text-blue-300 border-blue-500/20 bg-blue-500/10",
+  },
+  {
+    name: "Git",
+    color: "text-orange-400 border-orange-500/20 bg-orange-500/10",
+  },
   { name: "GitHub", color: "text-white border-white/20 bg-white/10" },
 ];
 
@@ -18,7 +36,11 @@ const technicalBreakdown = [
     tag: "Client Layer",
     accent: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
     icon: (
-      <svg className="h-5 w-5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
+      <svg
+        className="h-5 w-5 text-cyan-400"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <ellipse cx="12" cy="12" rx="3.5" ry="3.5" />
         <path
           fill="none"
@@ -44,7 +66,12 @@ const technicalBreakdown = [
     tag: "Server & API",
     accent: "text-emerald-400 border-emerald-500/30 bg-emerald-950/20",
     icon: (
-      <svg className="h-5 w-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="h-5 w-5 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -61,7 +88,12 @@ const technicalBreakdown = [
     tag: "Data Layer",
     accent: "text-sky-400 border-sky-500/30 bg-sky-950/20",
     icon: (
-      <svg className="h-5 w-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="h-5 w-5 text-sky-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <ellipse cx="12" cy="6" rx="8" ry="3" strokeWidth="2" />
         <path strokeWidth="2" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
         <path strokeWidth="2" d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
@@ -95,7 +127,8 @@ function MyProjects() {
           </h2>
           <p className="max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
             A comprehensive look at my primary full-stack production build,
-            highlighting frontend reactivity, backend services, and relational database architecture.
+            highlighting frontend reactivity, backend services, and relational
+            database architecture.
           </p>
         </div>
 
@@ -126,7 +159,9 @@ function MyProjects() {
                 <span className="font-mono text-[11px] text-white/50">
                   posts-management.app
                 </span>
-                <span className="text-[10px] text-orange-400">Live Architecture</span>
+                <span className="text-[10px] text-orange-400">
+                  Live Architecture
+                </span>
               </div>
 
               {/* Screenshot Image with locked proportion */}
@@ -153,8 +188,9 @@ function MyProjects() {
 
                 {/* Basic explanation */}
                 <p className="mb-5 text-sm leading-relaxed text-white/80 sm:text-base">
-                  A full-stack social media application inspired by Threads, built
-                  to practice and demonstrate modern web development skills.
+                  A full-stack social media application inspired by Threads,
+                  built to practice and demonstrate modern web development
+                  skills.
                 </p>
 
                 {/* Tech Badges */}
@@ -182,7 +218,9 @@ function MyProjects() {
                   onClick={() => setShowDetails(!showDetails)}
                   className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2.5 text-xs font-semibold text-orange-300 transition-all hover:border-orange-500 hover:bg-orange-500 hover:text-white"
                 >
-                  <span>{showDetails ? "Hide details" : "See more details"}</span>
+                  <span>
+                    {showDetails ? "Hide details" : "See more details"}
+                  </span>
                   <svg
                     className={`h-3.5 w-3.5 transition-transform duration-200 ${
                       showDetails ? "rotate-180" : ""
@@ -222,7 +260,9 @@ function MyProjects() {
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-orange-400">
                   Full-Stack Architecture Breakdown
                 </h4>
-                <span className="text-xs text-white/50">3-Tier Implementation</span>
+                <span className="text-xs text-white/50">
+                  3-Tier Implementation
+                </span>
               </div>
 
               {/* 3 Boxes: 1 col on mobile, 3 cols on tablet/desktop with Staggered Reveal */}

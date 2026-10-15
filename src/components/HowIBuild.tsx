@@ -16,8 +16,7 @@ const buildSteps = [
   {
     step: 3,
     title: "Test and Refine",
-    description:
-      "I verify functionality, fix bugs, and improve code quality.",
+    description: "I verify functionality, fix bugs, and improve code quality.",
   },
   {
     step: 4,
