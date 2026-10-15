@@ -122,15 +122,17 @@ function WhatICanDo() {
               }`}
             >
               <div>
-                {/* Icon Circle */}
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-black/40 transition-colors group-hover:border-orange-500/30 group-hover:bg-orange-500/10">
-                  {item.icon}
-                </div>
+                <div className="flex items-center gap-2">
+                  {/* Icon Circle */}
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-black/40 transition-colors group-hover:border-orange-500/30 group-hover:bg-orange-500/10">
+                    {item.icon}
+                  </div>
 
-                {/* Title */}
-                <h3 className="mb-3 text-lg font-bold tracking-tight text-white transition-colors group-hover:text-orange-300 sm:text-xl">
-                  {item.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="mb-3 text-lg font-bold tracking-tight text-white transition-colors group-hover:text-orange-300 sm:text-xl">
+                    {item.title}
+                  </h3>
+                </div>
 
                 {/* Description */}
                 <p className="text-sm leading-relaxed text-white/70 sm:text-base">
