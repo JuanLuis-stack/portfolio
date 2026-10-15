@@ -134,6 +134,22 @@ code {
   animation: text-shimmer 6s ease-in-out infinite;
 }
 
+.text-shimmer-gray {
+  background: linear-gradient(
+    120deg,
+    #aaa 0%,
+    #aaa 35%,
+    #aaa 48%,
+    #aaa 54%,
+    #fff 68%,
+    #aaa 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s ease-in-out infinite;
+}
+
 /* Scroll & Staggered Reveal Animations */
 .reveal-init {
   opacity: 0;
