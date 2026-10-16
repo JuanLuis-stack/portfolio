@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import TechStack from "./components/sections/TechStack/TechStack";
-import MyProjects from "./components/MyProjects";
+import MyProjects from "./components/sections/MyProjects/MyProjects";
 import WhatICanDo from "./components/sections/WhatICanDo/WhatICanDo";
 import HowIBuild from "./components/HowIBuild";
 
