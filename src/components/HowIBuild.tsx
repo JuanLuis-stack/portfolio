@@ -81,7 +81,7 @@ function HowIBuild() {
 
                 {/* Content Block */}
                 <div className="flex-1 rounded-2xl border border-white/5 bg-[#14100c]/60 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-orange-500/30 hover:bg-[#1a140f]/80 sm:p-6">
-                  <h3 className="text-base font-bold uppercase tracking-wider text-amber-400 transition-colors group-hover:text-amber-300 sm:text-lg">
+                  <h3 className="text-shimmer-orange text-base font-bold uppercase tracking-wider text-amber-400 transition-colors group-hover:text-amber-300 sm:text-lg">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">

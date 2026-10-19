@@ -1,108 +1,7 @@
 import { useState } from "react";
-import { useInView } from "../hooks/useInView";
-
-const projectTechs = [
-  { name: "React", color: "text-cyan-400 border-cyan-500/20 bg-cyan-500/10" },
-  {
-    name: "TypeScript",
-    color: "text-blue-400 border-blue-500/20 bg-blue-500/10",
-  },
-  {
-    name: "Tailwind CSS",
-    color: "text-sky-400 border-sky-500/20 bg-sky-500/10",
-  },
-  {
-    name: "Node.js",
-    color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-  },
-  {
-    name: "Express.js",
-    color: "text-zinc-300 border-zinc-500/20 bg-zinc-500/10",
-  },
-  {
-    name: "PostgreSQL",
-    color: "text-blue-300 border-blue-500/20 bg-blue-500/10",
-  },
-  {
-    name: "Git",
-    color: "text-orange-400 border-orange-500/20 bg-orange-500/10",
-  },
-  { name: "GitHub", color: "text-white border-white/20 bg-white/10" },
-];
-
-const technicalBreakdown = [
-  {
-    category: "Frontend",
-    tag: "Client Layer",
-    accent: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
-    icon: (
-      <svg
-        className="h-5 w-5 text-cyan-400"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <ellipse cx="12" cy="12" rx="3.5" ry="3.5" />
-        <path
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          d="M12 4.5c4.7 0 8.5 3.36 8.5 7.5s-3.8 7.5-8.5 7.5-8.5-3.36-8.5-7.5 3.8-7.5 8.5-7.5z"
-          transform="rotate(30 12 12)"
-        />
-        <path
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          d="M12 4.5c4.7 0 8.5 3.36 8.5 7.5s-3.8 7.5-8.5 7.5-8.5-3.36-8.5-7.5 3.8-7.5 8.5-7.5z"
-          transform="rotate(90 12 12)"
-        />
-      </svg>
-    ),
-    description:
-      "Built a component-based user interface with React and TypeScript, using reusable components, React hooks, Context API for shared state, and responsive styling with Tailwind CSS.",
-  },
-  {
-    category: "Backend",
-    tag: "Server & API",
-    accent: "text-emerald-400 border-emerald-500/30 bg-emerald-950/20",
-    icon: (
-      <svg
-        className="h-5 w-5 text-emerald-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        />
-      </svg>
-    ),
-    description:
-      "Developed a backend with Node.js and Express.js to handle API requests and application logic, connecting the frontend with the database.",
-  },
-  {
-    category: "Database",
-    tag: "Data Layer",
-    accent: "text-sky-400 border-sky-500/30 bg-sky-950/20",
-    icon: (
-      <svg
-        className="h-5 w-5 text-sky-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <ellipse cx="12" cy="6" rx="8" ry="3" strokeWidth="2" />
-        <path strokeWidth="2" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
-        <path strokeWidth="2" d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
-      </svg>
-    ),
-    description:
-      "Used PostgreSQL to store and manage application data, implementing relational structures and SQL queries to support user profiles, posts, and follow relationships.",
-  },
-];
+import { useInView } from "../../../hooks/useInView";
+import ArchitectureBreakdown from "./ArchitectureBreakdown";
+import ProjectTechBadges from "./ProjectTechBadges";
 
 function MyProjects() {
   const [showDetails, setShowDetails] = useState(false);
@@ -193,22 +92,7 @@ function MyProjects() {
                   skills.
                 </p>
 
-                {/* Tech Badges */}
-                <div className="mb-6">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-white/50">
-                    Technologies Used
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {projectTechs.map((tech) => (
-                      <span
-                        key={tech.name}
-                        className={`rounded-lg border px-2.5 py-1 text-xs font-medium ${tech.color}`}
-                      >
-                        {tech.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <ProjectTechBadges />
               </div>
 
               {/* Action Buttons */}
@@ -253,52 +137,7 @@ function MyProjects() {
             </div>
           </div>
 
-          {/* Bottom Section: 3-Box Architecture Breakdown (Below image, 3 columns on non-mobile with Staggered Reveal) */}
-          {showDetails && (
-            <div className="relative z-10 mt-8 border-t border-white/10 pt-8 animate-in fade-in duration-300">
-              <div className="mb-4 flex items-center justify-between">
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-orange-400">
-                  Full-Stack Architecture Breakdown
-                </h4>
-                <span className="text-xs text-white/50">
-                  3-Tier Implementation
-                </span>
-              </div>
-
-              {/* 3 Boxes: 1 col on mobile, 3 cols on tablet/desktop with Staggered Reveal */}
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-                {technicalBreakdown.map((item, index) => (
-                  <div
-                    key={item.category}
-                    style={{
-                      animationDelay: `${index * 160}ms`,
-                    }}
-                    className={`animate-hero-item flex flex-col justify-between rounded-2xl border p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 ${item.accent}`}
-                  >
-                    <div>
-                      <div className="mb-4 flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/40 ring-1 ring-white/10">
-                            {item.icon}
-                          </div>
-                          <h5 className="text-base font-bold text-white">
-                            {item.category}
-                          </h5>
-                        </div>
-                        <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium text-white/70">
-                          {item.tag}
-                        </span>
-                      </div>
-
-                      <p className="text-xs leading-relaxed text-white/80 sm:text-sm">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {showDetails && <ArchitectureBreakdown />}
         </div>
       </div>
     </section>

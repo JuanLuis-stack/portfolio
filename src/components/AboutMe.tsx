@@ -12,7 +12,7 @@ function AboutMe() {
       className="flex min-h-[65svh] scroll-mt-20 items-center border-t border-white/10 px-6 py-24 sm:px-10"
     >
       <div className="mx-auto w-full max-w-5xl">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.24em] text-orange-400">
+        <p className="pb-4 text-xs font-medium uppercase tracking-[0.24em] text-orange-400">
           01 / About Me
         </p>
 
@@ -90,7 +90,7 @@ function AboutMe() {
 
               {/* Expandable paragraphs */}
               {isExpanded && (
-                <div className="mt-4 space-y-4 border-t border-white/10 pt-4 text-base leading-relaxed text-white/75 sm:text-lg animate-in fade-in duration-300">
+                <div className="animate-hero-item shimmer- mt-4 space-y-4 border-t border-white/10 pt-4 text-base leading-relaxed text-white/75 sm:text-lg animate-in fade-in duration-300">
                   <p>
                     I value understanding the reasoning behind every solution
                     rather than simply copying code. I&apos;m always open to

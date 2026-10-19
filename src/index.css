@@ -134,6 +134,37 @@ code {
   animation: text-shimmer 6s ease-in-out infinite;
 }
 
+.text-shimmer-gray {
+  background: linear-gradient(
+    120deg,
+    #aaa 0%,
+    #aaa 35%,
+    #aaa 48%,
+    #aaa 54%,
+    #fff 68%,
+    #aaa 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s ease-in-out infinite;
+}
+.text-shimmer-orange {
+  background: linear-gradient(
+    90deg,
+    #ffb900 0%,
+    #fbc01e 35%,
+    #fff 48%,
+    #fce29a 54%,
+    #ffb900 68%,
+    #ffb900 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 10s ease-in-out infinite;
+}
+
 /* Scroll & Staggered Reveal Animations */
 .reveal-init {
   opacity: 0;
